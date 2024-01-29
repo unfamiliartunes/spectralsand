@@ -1,0 +1,19 @@
+param -name time -label ms -min 40 -max 4000 -default 100;
+param -name feedback -label % -min 0 -max 100 -default 0;
+param -name osc type -list ramp/square/triangle/sine/noise/custom -default 0;
+param -name osc freq -label hz -min 21.5 -max 1024 -default 21.5;
+param -name invert oscillator -list off/on -default 0;
+param -name offset -label % -min 0 -max 100 -default 0;
+param -name invert offset -list off/on -default 0;
+param -name bins -list 128/256/512/1024/2048 -default 2;
+param -name mix -label % -min 0  -max 100 -default 100;
+param -name sc mode -list off/on -default 0;
+param -name sc gain boost -label * -min 1 -max 500 -default 250;
+program ~init~;
+taillength 16;
+iolayout 2 2 | 2 0;
+code oLeq;
+type effect;
+description spectralsand is a spectral delay plugin built around a central array and the concept of signal printing.;
+manufacturer (un)familiar.;
+compatibility 1.0.7
